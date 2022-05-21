@@ -31,14 +31,15 @@ export function CategoryTab(props: CategoryProps) {
       }
     }
   };
-  return (React.createElement("div", { className: 'categories-tab' },
-    React.createElement("div", { className: 'container' },
-        React.createElement("button", { className: "btn " + (previousBtnHide && 'btn-hide'), onClick: function () { return scroll(-(props.move && props.move > 0 ? props.move : 101)); } }, "\u2039"),
-        React.createElement("div", { className: 'tabs', ref: ref }, data.map(function (item) {
+  return (React.createElement('div', { className: 'categories-tab' },
+    React.createElement('div', { className: 'container' },
+        React.createElement('button', { className: 'btn ' + (previousBtnHide && 'btn-hide'), onClick () { return scroll(-(props.move && props.move > 0 ? props.move : 101)); } }, '\u2039'),
+        // tslint:disable-next-line:only-arrow-functions
+        React.createElement('div', { className: 'tabs', ref }, data.map(function (item) {
             return (item.assignable ?
-                React.createElement(TabCategory, { key: item.id, id: item.id, name: item.title, setSelectedTab: setSelectedTab }) : null);
+                React.createElement(TabCategory, { key: item.id, id: item.id, name: item.title, setSelectedTab }) : null);
         })),
-        React.createElement("button", { className: "btn " + (nextBtnHide && 'btn-hide'), onClick: function () { return scroll(props.move && props.move > 0 ? props.move : 101); } }, "\u203A"))));
+        React.createElement('button', { className: 'btn ' + (nextBtnHide && 'btn-hide'), onClick () { return scroll(props.move && props.move > 0 ? props.move : 101); } }, '\u203A'))));
 /*
   return (
     <div className='categories-tab'>

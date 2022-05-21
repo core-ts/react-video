@@ -31,19 +31,19 @@ export function VideoInfoBox(props: VideoProps) {
   const handleClick = () => {
     setCollapsed(!collapsed);
   };
-  return (React.createElement("div", { className: 'video-info-container' },
-        React.createElement("div", { className: 'video-info' },
-            React.createElement("h3", { className: 'video-title' }, props.video.title),
-            React.createElement("div", { className: 'publish' }, props.video.publishedAt.toDateString())),
-        React.createElement("div", { className: 'video-info-box' },
-            React.createElement("div", { className: 'top' },
-                React.createElement("img", { src: props.channelThumbnail, alt: 'Avatar', width: 48, height: 48 }),
-                React.createElement("div", { className: 'channel-info' },
-                    React.createElement("h4", { className: 'channel-name' },
-                        React.createElement(Link, { to: "" + props.prefix + props.video.channelId }, props.video.channelTitle)))),
-            React.createElement("div", { className: "video-description " + (collapsed ? 'collapsed' : 'extended') + " " },
-                React.createElement("p", { dangerouslySetInnerHTML: { __html: props.video.description ? props.video.description : '' } })),
-            React.createElement("span", { className: 'btn-show', onClick: handleClick }, collapsed ? (props.resource ? props.resource.show_more : 'SHOW MORE') : (props.resource ? props.resource.show_less : 'SHOW LESS')))));
+  return (React.createElement('div', { className: 'video-info-container' },
+        React.createElement('div', { className: 'video-info' },
+            React.createElement('h3', { className: 'video-title' }, props.video.title),
+            React.createElement('div', { className: 'publish' }, props.video.publishedAt.toDateString())),
+        React.createElement('div', { className: 'video-info-box' },
+            React.createElement('div', { className: 'top' },
+                React.createElement('img', { src: props.channelThumbnail, alt: 'Avatar', width: 48, height: 48 }),
+                React.createElement('div', { className: 'channel-info' },
+                    React.createElement('h4', { className: 'channel-name' },
+                        React.createElement(Link, { to: '' + props.prefix + props.video.channelId }, props.video.channelTitle)))),
+            React.createElement('div', { className: 'video-description ' + (collapsed ? 'collapsed' : 'extended') + ' ' },
+                React.createElement('p', { dangerouslySetInnerHTML: { __html: props.video.description ? props.video.description : '' } })),
+            React.createElement('span', { className: 'btn-show', onClick: handleClick }, collapsed ? (props.resource ? props.resource.show_more : 'SHOW MORE') : (props.resource ? props.resource.show_less : 'SHOW LESS')))));
 /*
   return (
     <div className='video-info-container'>

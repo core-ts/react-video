@@ -1,6 +1,6 @@
 {
   "name": "react-videos",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "react-video",
   "main": "./lib/index.js",
   "types": "./src/index.ts",

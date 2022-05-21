@@ -11,9 +11,9 @@ export function TabCategory(props: Props) {
   const handOnClick = () => {
     setSelectedTab(id);
   };
-  return (React.createElement("li", { className: 'tab' },
-    React.createElement("input", { type: 'radio', id: id, name: 'tab', onClick: handOnClick }),
-    React.createElement("label", { className: 'tab-label', htmlFor: id }, name)));
+  return (React.createElement('li', { className: 'tab' },
+    React.createElement('input', { type: 'radio', id, name: 'tab', onClick: handOnClick }),
+    React.createElement('label', { className: 'tab-label', htmlFor: id }, name)));
   /*
   return (
     <li className='tab'>

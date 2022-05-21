@@ -1,7 +1,7 @@
 import * as React from 'react';
+import '../Slide.css';
 import { ListResult, PlaylistVideo } from './model';
 import { PlayButton } from './PlayButton';
-import '../Slide.css';
 
 export interface SlideProps {
   id: string;
@@ -52,14 +52,15 @@ export const Slide = (props: SlideProps) => {
   const handleFetch = () => {
     setFetching(true);
   };
-  return (React.createElement("div", { className: 'carousel-container cover', style: { width: '100%' }, onMouseEnter: handleFetch },
-  React.createElement("div", { className: 'carousel-wrapper' },
-      React.createElement("button", { type: 'button', onClick: prev, className: 'left-arrow' }, "\u276E"),
-      !play && React.createElement("div", { className: 'play-container', onClick: handlePlayVideo },
+  return (React.createElement('div', { className: 'carousel-container cover', style: { width: '100%' }, onMouseEnter: handleFetch },
+  React.createElement('div', { className: 'carousel-wrapper' },
+      React.createElement('button', { type: 'button', onClick: prev, className: 'left-arrow' }, '\u276E'),
+      !play && React.createElement('div', { className: 'play-container', onClick: handlePlayVideo },
           React.createElement(PlayButton, null)),
-      React.createElement("div", { className: 'carousel-content-wrapper' },
-          React.createElement("div", { className: 'carousel-content', style: { transform: "translateX(-" + currentIndex * 100 + "%)" } }, videos && videos.length > 0 ? (videos.map(function (item, index) { return (currentIndex === index && play ? (React.createElement("iframe", { key: item.title, width: '200', height: '200', src: currentIndex === index ? "https://www.youtube.com/embed/" + item.id + "?autoplay=1" : "https://www.youtube.com/embed/" + item.id, title: 'YouTube video player', allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;' })) : (React.createElement("img", { className: 'img-thumb', key: item.title, src: (item as any)[thumbnailSize], alt: 'video thumbnail' }))); })) : (React.createElement("img", { src: thumbnail, alt: 'video thumbnail' })))),
-      React.createElement("button", { type: 'button', onClick: next, className: 'right-arrow' }, "\u276F"))));
+      React.createElement('div', { className: 'carousel-content-wrapper' },
+          // tslint:disable-next-line:only-arrow-functions
+          React.createElement('div', { className: 'carousel-content', style: { transform: 'translateX(-' + currentIndex * 100 + '%)' } }, videos && videos.length > 0 ? (videos.map(function (item, index) { return (currentIndex === index && play ? (React.createElement('iframe', { key: item.title, width: '200', height: '200', src: currentIndex === index ? 'https://www.youtube.com/embed/' + item.id + '?autoplay=1' : 'https://www.youtube.com/embed/' + item.id, title: 'YouTube video player', allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;' })) : (React.createElement('img', { className: 'img-thumb', key: item.title, src: (item as any)[thumbnailSize], alt: 'video thumbnail' }))); })) : (React.createElement('img', { src: thumbnail, alt: 'video thumbnail' })))),
+      React.createElement('button', { type: 'button', onClick: next, className: 'right-arrow' }, '\u276F'))));
 /*
   return (
     <div className='carousel-container cover' style={{ width: '100%' }} onMouseEnter={handleFetch}>
